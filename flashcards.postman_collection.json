@@ -43,9 +43,32 @@
 		{
 			"name": "Post_new_collection",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
-				"url": null
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"collection_name\": \"MULTIPLICATION\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/collections/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"collections",
+						""
+					]
+				}
 			},
 			"response": []
 		},
@@ -67,7 +90,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/collections/1/flashcard",
+					"raw": "http://127.0.0.1:8000/collections/2/flashcard",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -78,7 +101,7 @@
 					"port": "8000",
 					"path": [
 						"collections",
-						"1",
+						"2",
 						"flashcard"
 					]
 				}
@@ -91,7 +114,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/collections/1",
+					"raw": "http://127.0.0.1:8000/collections/2",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -102,7 +125,41 @@
 					"port": "8000",
 					"path": [
 						"collections",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post_new_flashcard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"collection\": 2,\r\n        \"question\": \"6 - 2\",\r\n        \"answer\": \"4\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/collections/2/flashcard/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
 						"1"
+					],
+					"port": "8000",
+					"path": [
+						"collections",
+						"2",
+						"flashcard",
+						""
 					]
 				}
 			},

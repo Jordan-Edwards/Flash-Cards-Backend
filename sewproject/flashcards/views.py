@@ -50,3 +50,10 @@ class FlashcardList(APIView):
         flashcard = Flashcard.objects.filter(collection_id=pk)
         serializer = FlashcardSerializer(flashcard, many=True)
         return Response(serializer.data)
+
+    def post(self, request, pk):
+        serializer = FlashcardSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
