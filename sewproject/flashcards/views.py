@@ -62,7 +62,7 @@ class FlashcardList(APIView):
 class FlashcardDetail(APIView):
 
     def put(self, request, pk, fk):
-        flashcard = Flashcard.objects.get(collection_id=fk)
+        flashcard = Flashcard.objects.get(collection_id=fk, id=pk)
         serializer = FlashcardSerializer(flashcard, data=request.data)
         if serializer.is_valid():
             serializer.save()
