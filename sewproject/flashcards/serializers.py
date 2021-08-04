@@ -5,7 +5,7 @@ from .models import Collection, Flashcard
 class CollectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Collection
-        fields = ['collection_name']
+        fields = ['collection_name', 'id']
 
 
 class FlashcardSerializer(serializers.ModelSerializer):
